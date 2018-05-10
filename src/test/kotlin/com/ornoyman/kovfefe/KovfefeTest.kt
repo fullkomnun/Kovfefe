@@ -30,6 +30,7 @@ class KovfefeTest {
 
     @Test
     fun test() {
+        println("Success")
 //        println(BIConversion.User::class.generate())
     }
 }
