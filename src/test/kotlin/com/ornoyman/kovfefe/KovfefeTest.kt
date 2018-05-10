@@ -1,6 +1,5 @@
 package com.ornoyman.kovfefe
 
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion
 import org.junit.Test
 import java.math.BigDecimal
 import java.math.BigInteger
@@ -31,7 +30,7 @@ class KovfefeTest {
 
     @Test
     fun test() {
-        println(BIConversion.User::class.generate())
+//        println(BIConversion.User::class.generate())
     }
 }
 
