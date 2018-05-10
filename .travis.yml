@@ -15,12 +15,12 @@ script:
   - ./gradlew check
   - ./gradlew jacocoTestReport
 
-deploy:
-  provider: bintray
-  file: "descriptor.json"
-  user: $BINTRAY_API_USER
-  key: $BINTRAY_API_KEY
-  dry-run: false
+#deploy:
+#  provider: bintray
+#  file: "descriptor.json"
+#  user: $BINTRAY_API_USER
+#  key: $BINTRAY_API_KEY
+#  dry-run: false
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
