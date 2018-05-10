@@ -97,6 +97,6 @@ artifacts {
 
 model {
     tasks.generatePomFileForMavenPublication {
-        destination = file("$buildDir/libs/rxtest-" + version + ".pom")
+        destination = file("$buildDir/libs/kovfefe-" + version + ".pom")
     }
 }

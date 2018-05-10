@@ -1,27 +1,27 @@
 {
   "package": {
-    "name": "com.rubylichtenstein.rxtest",
-    "repo": "RxTest",
-    "subject": "rubylichtenstein",
-    "desc": "Kotlin library for testing RxJava",
+    "name": "com.ornoyman.kovfefe",
+    "repo": "Kovfefe",
+    "subject": "ornoyman",
+    "desc": "Kotlin library",
     "website_url": "",
     "issue_tracker_url": "https://github.com/RubyLichtenstein/RxTest/issues",
     "vcs_url": "https://github.com/RubyLichtenstein/RxTest.git",
     "licenses": ["Apache-2.0"],
-    "labels": ["kotlin", "kotlin-dsl", "rxjava2", "bintray", "gradle"],
+    "labels": ["kotlin"],
     "public_download_numbers": false,
     "public_stats": false
   },
 
   "version": {
-    "name": "1.0.6",
+    "name": "0.0.1",
     "released": "2018-02-26",
     "gpgSign": false
   },
 
   "files":
   [
-    {"includePattern": "build/libs/(.*)", "uploadPattern": "com/rubylichtenstein/rxtest/1.0.6/$1"}
+    {"includePattern": "build/libs/(.*)", "uploadPattern": "com/ornoyman/kovfefe/0.0.1/$1"}
   ],
   "publish": true
 }
