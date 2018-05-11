@@ -7,21 +7,52 @@
 
 ### Kotlin library for genrating data types.
 
-### 
+### Motivation 
+Many times writing tests requires generating data types which can be tedious.
+This library aims at making generating data for tests easier.
 
+### Examaple
 ```kotlin
-      data class BasicType(
-            val string: String,
-            val int: Int,
-            val long: Long,
-            val float: Float,
-            val boolean: Boolean,
-            val double: Double,
-            val char: Char,
-            val byte: Byte
-        )
-        
-        val foo = generate<BasicType>()
-               
+data class Movie(
+    val overview: String,
+    val originalLanguage: String,
+    val originalTitle: String,
+    val video: Boolean,
+    val title: String,
+    val genreIds: List<Int>,
+    val posterPath: String,
+    val backdropPath: String,
+    val releaseDate: String,
+    val popularity: Double,
+    val voteAverage: Double,
+    val id: Int,
+    val adult: Boolean,
+    val voteCount: Int
+)
+```
+
+#### We have the generate Movie data type with fixed 'id' and 'title' and any valid values for the rest of the fields
+##### Before
+```kotlin
+val movie = Movie(
+    overview = "",
+    originalLanguage = "",
+    originalTitle = "",
+    video = true,
+    title = "Avengers: Infinity War",
+    genreIds = listOf(),
+    posterPath = "",
+    backdropPath = "",
+    releaseDate = "",
+    popularity = 9.8,
+    voteAverage = 9.5,
+    id = 42,
+    adult = false,
+    voteCount = 10_000
+)
+```
+##### After
+```kotlin
+val movie = generate<Movie>().copy(id = 42, title = "Avengers: Infinity War")          
 ```
 
