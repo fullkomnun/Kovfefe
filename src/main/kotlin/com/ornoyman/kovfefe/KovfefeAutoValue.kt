@@ -16,11 +16,11 @@
 //
 //fun <T : Any> KClass<T>.generate(): T =
 //    when {
-//        isData -> generateDataClass()
+//        isData -> genDataClass()
 //        isTopLevelAutoValue -> generateTopLevelAutoValue()
 //        isNestedAutoValue -> generateNestedAutoValue()
 //        java.isEnum -> java.enumConstants.first()
-//        else -> doGenerate() as T
+//        else -> doGen() as T
 //    }
 //
 //private fun <T : Any> KClass<T>.generateTopLevelAutoValue(): T {
@@ -57,7 +57,7 @@
 //        false
 //    }
 //
-//private fun <T : Any> KClass<T>.generateDataClass(): T = primaryConstructor!!.invoke()
+//private fun <T : Any> KClass<T>.genDataClass(): T = primaryConstructor!!.invoke()
 //
 //private fun <T : Any> KFunction<T>.invoke(): T {
 //    val params = parameters
@@ -70,7 +70,7 @@
 //    return callBy(params)
 //}
 //
-//private fun <T : Any> KClass<T>.doGenerate(): Any =
+//private fun <T : Any> KClass<T>.doGen(): Any =
 //    when (qualifiedName) {
 //        List::class.qualifiedName -> listOf<T>()
 //        Set::class.qualifiedName -> setOf<T>()
