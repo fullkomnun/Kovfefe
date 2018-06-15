@@ -15,7 +15,7 @@ fun <T : Any> KClass<T>.generate(): T = when {
     basicTypes.containsKey(this) -> basicTypes[this] as T
     bigNumberTypes.containsKey(this) -> bigNumberTypes[this] as T
     collectionTypes.containsKey(this) -> collectionTypes[this] as T
-    else -> throw IllegalArgumentException("Cannot generate $qualifiedName")
+    else -> throw NotSupportedTypeException("Cannot generate $qualifiedName")
 }
 
 private fun <T : Any> KClass<T>.generateDataClass(): T = primaryConstructor!!.invoke()
@@ -31,3 +31,5 @@ private fun <T : Any> KFunction<T>.generateParameters(): Map<KParameter, Any?> =
 private fun generateParameter(it: KParameter) =
     if (it.type.isMarkedNullable) null
     else (it.type.classifier as KClass<*>).generate()
+
+class NotSupportedTypeException(message: String) : Exception(message)
