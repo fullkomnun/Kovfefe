@@ -28,8 +28,8 @@ private fun <T : Any> KFunction<T>.generateParameters(): Map<KParameter, Any?> =
         .filter { it.type.classifier is KClass<*> }
         .associate { it to generateParameter(it) }
 
-private fun generateParameter(it: KParameter) =
-    if (it.type.isMarkedNullable) null
-    else (it.type.classifier as KClass<*>).generate()
+private fun generateParameter(param: KParameter) =
+    if (param.type.isMarkedNullable) null
+    else (param.type.classifier as KClass<*>).generate()
 
 class UnsupportedTypeException(message: String) : Exception(message)
