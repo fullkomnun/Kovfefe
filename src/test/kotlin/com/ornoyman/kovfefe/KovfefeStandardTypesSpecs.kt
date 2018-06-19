@@ -5,7 +5,7 @@ import org.jetbrains.spek.api.dsl.describe
 import org.jetbrains.spek.api.dsl.it
 import kotlin.test.assertEquals
 
-object KovfefeBasicTypesSpecs : Spek({
+object KovfefeStandardTypesSpecs : Spek({
 
     listOf(basicTypes, bigNumberTypes, collectionTypes).forEach { types ->
 
