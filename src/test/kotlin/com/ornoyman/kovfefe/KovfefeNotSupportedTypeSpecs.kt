@@ -10,8 +10,8 @@ object KovfefeNotSupportedTypeSpecs : Spek({
     val notSupportedType = Comparator::class
     describe("generate not supported type: $notSupportedType") {
 
-        it("should fail with ${NotSupportedTypeException::class}") {
-            assertFailsWith(NotSupportedTypeException::class) {
+        it("should fail with ${UnsupportedTypeException::class}") {
+            assertFailsWith(UnsupportedTypeException::class) {
                 notSupportedType.generate()
             }
         }
