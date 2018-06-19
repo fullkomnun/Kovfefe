@@ -5,14 +5,14 @@ import org.jetbrains.spek.api.dsl.describe
 import org.jetbrains.spek.api.dsl.it
 import kotlin.test.assertFailsWith
 
-object KovfefeNotSupportedTypeSpecs : Spek({
+object KovfefeUnsupportedTypeSpecs : Spek({
 
-    val notSupportedType = Comparator::class
-    describe("generate not supported type: $notSupportedType") {
+    val unsupportedType = Comparator::class
+    describe("generate not supported type: $unsupportedType") {
 
         it("should fail with ${UnsupportedTypeException::class}") {
             assertFailsWith(UnsupportedTypeException::class) {
-                notSupportedType.generate()
+                unsupportedType.generate()
             }
         }
     }
